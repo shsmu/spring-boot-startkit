@@ -5,7 +5,7 @@ Spring boot Startkit
 
 ## docker 部署
 ```
-clean package docker:build
+mvn clean package docker:build
 cd docker
 docker-compose.exe up -d
 
