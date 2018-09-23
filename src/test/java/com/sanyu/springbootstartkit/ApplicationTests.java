@@ -1,4 +1,4 @@
-package com.sanyu.spring.bootstartkit;
+package com.sanyu.springbootstartkit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringbootstartkitApplicationTests {
+public class ApplicationTests {
 
 	@Test
 	public void contextLoads() {

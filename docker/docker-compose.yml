@@ -1,0 +1,7 @@
+version: '3'
+services:
+  springbootstartkit:
+    image: shsmu/springbootstartkit
+    restart: always
+    ports:
+      - 18080:8080
