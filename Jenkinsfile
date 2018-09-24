@@ -49,8 +49,8 @@ if (branch_type == "dev") {
             input "Do you want to start a release?"
         }
         node {
-            sshagent(['f1ad0f5d-df0d-441a-bea0-fd2c34801427']) {
-                mvn("jgitflow:release-start")
+                sh "echo  Deploying to ${branch_deployment_environment}"
+                //TODO do the actual tests
             }
         }
     }
@@ -62,8 +62,8 @@ if (branch_type == "release") {
             input "Is the release finished?"
         }
         node {
-            sshagent(['f1ad0f5d-df0d-441a-bea0-fd2c34801427']) {
-                mvn("jgitflow:release-finish -Dmaven.javadoc.skip=true -DnoDeploy=true")
+                sh "echo  Deploying to ${branch_deployment_environment}"
+                //TODO do the actual tests
             }
         }
     }
@@ -75,8 +75,8 @@ if (branch_type == "hotfix") {
             input "Is the hotfix finished?"
         }
         node {
-            sshagent(['f1ad0f5d-df0d-441a-bea0-fd2c34801427']) {
-                mvn("jgitflow:hotfix-finish -Dmaven.javadoc.skip=true -DnoDeploy=true")
+                sh "echo  Deploying to ${branch_deployment_environment}"
+                //TODO do the actual tests
             }
         }
     }
