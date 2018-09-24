@@ -57,8 +57,5 @@ app.jar  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run
 # du -sh app.jar
 16M     app.jar
 ```
-<br>
-<div align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YRW1zTg7abs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>    <br>
-</div>
-    <br>
+
+[![Demo](https://j.gifs.com/N9357L.gif)](https://www.youtube.com/embed/YRW1zTg7abs)
