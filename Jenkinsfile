@@ -51,7 +51,7 @@ if (branch_type == "dev") {
         node {
                 sh "echo  Deploying to ${branch_deployment_environment}"
                 //TODO do the actual tests
-            }
+
         }
     }
 }
@@ -64,7 +64,7 @@ if (branch_type == "release") {
         node {
                 sh "echo  Deploying to ${branch_deployment_environment}"
                 //TODO do the actual tests
-            }
+
         }
     }
 }
@@ -77,7 +77,7 @@ if (branch_type == "hotfix") {
         node {
                 sh "echo  Deploying to ${branch_deployment_environment}"
                 //TODO do the actual tests
-            }
+
         }
     }
 }
