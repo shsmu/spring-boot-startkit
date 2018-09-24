@@ -58,10 +58,10 @@ if (branch_type == "dev") {
               	withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerHubPwd')]) {
                       sh "docker login -u shsmu -p ${dockerHubPwd}"
                 }
-              	sh " #docker tag shsmu/springbootstartkit:latest  shsmu/springbootstartkit:${currentBuild.displayName}; docker push shsmu/springbootstartkit:${currentBuild.displayName}"
+              	sh "docker tag shsmu/springbootstartkit:latest  shsmu/springbootstartkit:${currentBuild.displayName}; docker push shsmu/springbootstartkit:${currentBuild.displayName}"
         }
     }
-    stage('start release') {
+    stage('deploy') {
         node {
                 sh "echo  Deploying to ${branch_deployment_environment}"
                 def dockerRun = 'docker run -d -p 18080:8080 --name spring-boot-startkit shsmu/springbootstartkit '
