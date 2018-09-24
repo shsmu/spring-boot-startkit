@@ -50,8 +50,24 @@ if (branch_type == "dev") {
         }
         node {
                 sh "echo  Deploying to ${branch_deployment_environment}"
-                //TODO do the actual tests
-
+        }
+    }
+    stage('Push docker images') {
+        node {
+                sh "echo  Deploying to ${branch_deployment_environment}"
+              	withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerHubPwd')]) {
+                      sh "docker login -u shsmu -p ${dockerHubPwd}"
+                }
+              	sh " docker tag shsmu/springbootstartkit:latest  shsmu/springbootstartkit:${currentBuild.displayName}; docker push shsmu/springbootstartkit:${currentBuild.displayName}"
+        }
+    }
+    stage('start release') {
+        node {
+                sh "echo  Deploying to ${branch_deployment_environment}"
+                def dockerRun = 'docker run -d -p 18080:8080 --name spring-boot-startkit shsmu/springbootstartkit '
+                sshagent(['dev.sanyu.com']) {
+                    sh "ssh -o StrictHostKeyChecking=no root@dev.sanyu.com ${dockerRun}"
+                }
         }
     }
 }
